@@ -1,7 +1,9 @@
 from flask import Flask, render_template, request
 from jinja2 import StrictUndefined
-import urllib2
+from parse import build_element_histogram
 import os
+import requests
+import lxml.html
 
 app = Flask(__name__)
 app.secret_key = os.environ['FLASK_TOKEN']
@@ -23,19 +25,16 @@ def fetch_html():
 
     input_url = request.form.get('input_url')
 
-    response = urllib2.urlopen(input_url)
-    html = response.read()
+    # Fetch HTML of input url and store as unicode
+    page = requests.get(input_url)
 
-    html_list = html.split("</")
+    # Convert HTML unicode to Tree
+    tree = lxml.html.fromstring(page.text)
 
-    elements = {}
-    for element in html_list:
-        # elements[element] = elements.setdefault(element, 0) + 1
-        print element
+    # Get histogram of element frequencies
+    frequency = build_element_histogram(tree)
 
-    print elements
-
-    return render_template('results.html', html=html)
+    return render_template('results.html', frequency=frequency)
 
 
 if __name__ == '__main__':
