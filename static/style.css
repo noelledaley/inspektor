@@ -3,7 +3,8 @@ body {
 }
 
 #wrapper {
-  margin: 100 auto;
+  max-width: 800px;
+  margin: 100px auto;
 }
 
 #main {
