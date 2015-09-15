@@ -5,6 +5,6 @@ html = response.read()
 
 html_list = html.split()
 
-print html_list[0]
+print html_list[1]
 
 # print html
