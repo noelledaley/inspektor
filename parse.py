@@ -8,10 +8,15 @@ page = requests.get(input_url)
 # Convert HTML unicode to Tree
 tree = lxml.html.fromstring(page.text)
 
-def count_elements(tree):
-    """Given an HTML Tree, count number of elements."""
+def build_element_histogram(tree):
+    """
+    Given an HTML Tree, count number of elements and store as histogram.
+
+    Returns dictionary where keys are elements and values are frequency.
+    """
     count = {}
 
+    # Iterate through all elements in Tree, depth-first
     for element in tree.iter():
         count[element.tag] = count.setdefault(element.tag, 0) + 1
 
