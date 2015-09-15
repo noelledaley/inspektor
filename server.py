@@ -21,12 +21,13 @@ def index():
 
 @app.route('/results', methods=['POST'])
 def fetch_html():
-    """Given URL, fetch html and render as a string."""
+    """Given URL, fetch html, parse it, and store elements and frequencies as a Python dictionary."""
 
     input_url = request.form.get('input_url')
 
     # Fetch HTML of input url and store as unicode
     page = requests.get(input_url)
+    raw_html = page.text
 
     # Convert HTML unicode to Tree
     tree = lxml.html.fromstring(page.text)
@@ -34,7 +35,7 @@ def fetch_html():
     # Get histogram of element frequencies
     frequency = build_element_histogram(tree)
 
-    return render_template('results.html', frequency=frequency)
+    return render_template('results.html', frequency=frequency, raw_html=raw_html)
 
 
 if __name__ == '__main__':
