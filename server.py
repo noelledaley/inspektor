@@ -1,19 +1,29 @@
-import urllib2
 from flask import Flask, render_template
+from jinja2 import StrictUndefined
+import urllib2
 import os
 
 app = Flask(__name__)
 app.secret_key = os.environ['FLASK_TOKEN']
 app.jinja_env.undefined = StrictUndefined
 
-response = urllib2.urlopen('http://pythonforbeginners.com/')
-html = response.read()
 
-html_list = html.split(">")
+### Routes ###
 
-print html_list[0], html_list[1], html_list[2]
+@app.route('/')
+def index():
+    """Return index page."""
+
+    return render_template('index.html')
+
+# response = urllib2.urlopen('http://pythonforbeginners.com/')
+# html = response.read()
+#
+# html_list = html.split(">")
+#
+# print html_list[0], html_list[1], html_list[2]
 
 # print html
 
-if name if __name__ == '__main__':
+if __name__ == '__main__':
     app.run()
