@@ -17,8 +17,9 @@ def index():
     return render_template('index.html')
 
 
-@app.route('/search')
+@app.route('/results')
 def fetch_html():
+    """Given URL, fetch html and render as a string."""
 
     response = urllib2.urlopen('http://pythonforbeginners.com/')
     html = response.read()
@@ -27,7 +28,7 @@ def fetch_html():
 
     print html_list[0], html_list[1], html_list[2]
 
-    return html
+    return render_template('results.html')
 
 if __name__ == '__main__':
     app.run()
