@@ -10,3 +10,8 @@ body {
 #main {
 
 }
+
+pre {
+  overflow: auto;
+  height: 500px;
+}
