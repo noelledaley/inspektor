@@ -30,7 +30,7 @@ def fetch_html():
 
     elements = {}
     for element in html_list:
-        elements[element] = elements.setDefault(element, 0) + 1
+        elements[element] = elements.setdefault(element, 0) + 1
 
     print elements
 
