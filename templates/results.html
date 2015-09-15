@@ -1,26 +1,38 @@
 {% extends 'base.html'%}
 {% block title %}Inspektor{% endblock %}
 
-{% block content %}
-  <h1>Your HTML is:</h1>
-  <pre>{{raw_html}}</pre>
+{% block script %}
+<!-- highlight.js -->
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/styles/default.min.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.8.0/highlight.min.js"></script>
+{% endblock %}
 
-  <div class="table-responsive">
-      <table class="table table-striped table-hover">
-          <thead>
-          <tr>
-              <th>Element</th>
-              <th>Frequency</th>
-          </tr>
-          </thead>
-          <tbody>
-                {% for element in frequency %}
-                    <tr class="my-{{element}}">
-                      <td>{{element}}</td>
-                      <td>{{frequency[element]}}</td>
-                    </tr>
-                {% endfor %}
-          </tbody>
-      </table>
-    </div>
+{% block content %}
+<h1>Your HTML is:</h1>
+<pre>
+  <code class="html">{{raw_html}}</code>
+</pre>
+
+<div class="table-responsive">
+  <table class="table table-striped table-hover">
+    <thead>
+      <tr>
+        <th>Element</th>
+        <th>Frequency</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for element in frequency %}
+      <tr class="my-{{element}}">
+        <td>{{element}}</td>
+        <td>{{frequency[element]}}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+<script>
+  hljs.initHighlightingOnLoad();
+</script>
 {% endblock %}
