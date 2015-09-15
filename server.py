@@ -26,11 +26,12 @@ def fetch_html():
     response = urllib2.urlopen(input_url)
     html = response.read()
 
-    html_list = html.split(">")
+    html_list = html.split("</")
 
     elements = {}
     for element in html_list:
-        elements[element] = elements.setdefault(element, 0) + 1
+        # elements[element] = elements.setdefault(element, 0) + 1
+        print element
 
     print elements
 
