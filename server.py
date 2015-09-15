@@ -4,6 +4,7 @@ import os
 
 app = Flask(__name__)
 app.secret_key = os.environ['FLASK_TOKEN']
+app.jinja_env.undefined = StrictUndefined
 
 response = urllib2.urlopen('http://pythonforbeginners.com/')
 html = response.read()
@@ -15,3 +16,4 @@ print html_list[0], html_list[1], html_list[2]
 # print html
 
 if name if __name__ == '__main__':
+    app.run()
