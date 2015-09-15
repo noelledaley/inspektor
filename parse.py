@@ -13,7 +13,6 @@ def count_elements(tree):
     count = {}
 
     for element in tree.iter():
-        print element
         count[element.tag] = count.setdefault(element.tag, 0) + 1
 
     return count
