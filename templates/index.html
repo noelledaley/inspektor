@@ -1,13 +1,10 @@
-<!DOCTYPE html>
-<html>
-  <head></head>
+{% extends 'base.html'%}
+{% block title %}Inspektor{% endblock %}
+
+{% block content %}
   <body>Test
     <form action="/search">
       <input type="text">
       <input type="submit">
     </form>
-
-
-
-  </body>
-</html>
+{% endblock %}
