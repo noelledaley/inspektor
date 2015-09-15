@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 from jinja2 import StrictUndefined
 import urllib2
 import os
@@ -30,7 +30,7 @@ def fetch_html():
 
     print html_list[0], html_list[1], html_list[2]
 
-    return render_template('results.html')
+    return render_template('results.html', html=html)
 
 
 if __name__ == '__main__':
