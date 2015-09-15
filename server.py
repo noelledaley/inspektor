@@ -16,14 +16,18 @@ def index():
 
     return render_template('index.html')
 
-# response = urllib2.urlopen('http://pythonforbeginners.com/')
-# html = response.read()
-#
-# html_list = html.split(">")
-#
-# print html_list[0], html_list[1], html_list[2]
 
-# print html
+@app.route('/search')
+def fetch_html():
+
+    response = urllib2.urlopen('http://pythonforbeginners.com/')
+    html = response.read()
+
+    html_list = html.split(">")
+
+    print html_list[0], html_list[1], html_list[2]
+
+    return html
 
 if __name__ == '__main__':
     app.run()
