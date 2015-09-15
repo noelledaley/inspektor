@@ -28,7 +28,11 @@ def fetch_html():
 
     html_list = html.split(">")
 
-    print html_list[0], html_list[1], html_list[2]
+    elements = {}
+    for element in html_list:
+        elements[element] = elements.setDefault(element, 0) + 1
+
+    print elements
 
     return render_template('results.html', html=html)
 
