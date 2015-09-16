@@ -8,7 +8,7 @@ input_url = 'http://docs.python-guide.org/en/latest/scenarios/scrape/'
 # Fetch HTML of input url, parse, and convert to Tree
 tree = lxml.html.parse(input_url)
 
-def decode_html(html):
+def encode_html(html):
     """Given string of html, removes <, >, and & and replaces with entities."""
 
     return cgi.escape(html)
@@ -29,5 +29,10 @@ def build_element_histogram(tree):
     return count
 
 sample_html = '<div id="icons"> <ul> <li><a href="mailto:adriannenoelle@gmail.com"> <img src="img/gmail.png" class="icon" alt="gmail logo"></a> </li>'
+
+t = decode_html(sample_html)
+
+# def add_spans(decoded_html):
+    # TODO: wrap every tag in a span element
 
 # sub()	Find all substrings where the RE matches, and replace them with a different string
