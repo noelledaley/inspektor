@@ -8,4 +8,4 @@ Inspektor helps users analyze the HTML of a URL without using the developer cons
 - Bootstrap
 
 ### Parsing HTML
-I used lxml.html, which is a Python package for parsing HTML.
+To fetch and parse HTML I used a combination of the requests library and lxml.html. In particular, lxml.html has a method called fromstring(), which I used to pass in html. fromstring() returns a tree object containing each HTML element as a node. From here, I iterated through the tree to build my historgram.
