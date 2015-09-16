@@ -8,28 +8,42 @@
 {% endblock %}
 
 {% block content %}
-<h1>Your HTML is:</h1>
-<pre>
-  <code class="html">{{raw_html}}</code>
-</pre>
+<div class="row">
+  <div class="col-md-4 col-md-offset-4">
+    <h1>Your HTML is:</h1>
+  </div>
+</div>
 
-<div class="table-responsive">
-  <table class="table table-striped table-hover">
-    <thead>
-      <tr>
-        <th>Element</th>
-        <th>Frequency</th>
-      </tr>
-    </thead>
-    <tbody>
-      {% for element in frequency %}
-      <tr class="my-{{element}}">
-        <td>{{element}}</td>
-        <td>{{frequency[element]}}</td>
-      </tr>
-      {% endfor %}
-    </tbody>
-  </table>
+
+<div class="row">
+
+  <div class="col-md-8">
+    <pre>
+      <code class="html">{{raw_html}}</code>
+    </pre>
+  </div>
+
+  <div class="col-md-4">
+    <div class="table-responsive">
+      <table class="table table-striped table-hover">
+        <thead>
+          <tr>
+            <th>Element</th>
+            <th>Frequency</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for element in frequency %}
+          <tr class="my-{{element}}">
+            <td>{{element}}</td>
+            <td>{{frequency[element]}}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+
 </div>
 
 <script>
