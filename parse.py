@@ -30,9 +30,22 @@ def build_element_histogram(tree):
 
 sample_html = '<div id="icons"> <ul> <li><a href="mailto:adriannenoelle@gmail.com"> <img src="img/gmail.png" class="icon" alt="gmail logo"></a> </li>'
 
-t = decode_html(sample_html)
+t = encode_html(sample_html)
 
-# def add_spans(decoded_html):
-    # TODO: wrap every tag in a span element
+def add_spans(decoded_html):
+
+    # Split decoded_html on closing bracket
+    elements = decoded_html.split('&gt;')
+
+    spans = []
+
+    for element in elements:
+        # Wrap element in span and code tags
+        span = '<span class="%s"><code>%s&gt;</code></span>' % (element, element)
+        spans.append(span)
+
+    html = "".join(spans)
+    # returns HTML as string
+    return html
 
 # sub()	Find all substrings where the RE matches, and replace them with a different string
