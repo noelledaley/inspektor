@@ -9,6 +9,7 @@ input_url = 'http://docs.python-guide.org/en/latest/scenarios/scrape/'
 tree = lxml.html.parse(input_url)
 
 def decode_html(html):
+    """Given string of html, removes <, >, and & and replaces with entities."""
 
     return cgi.escape(html)
 
