@@ -1,13 +1,16 @@
 import requests
 import lxml.html
 import re
+import cgi
 
 input_url = 'http://docs.python-guide.org/en/latest/scenarios/scrape/'
 
 # Fetch HTML of input url, parse, and convert to Tree
 tree = lxml.html.parse(input_url)
 
+def decode_html(html):
 
+    return cgi.escape(html)
 
 
 def build_element_histogram(tree):
