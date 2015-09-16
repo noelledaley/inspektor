@@ -6,3 +6,6 @@ Inspektor helps users analyze the HTML of a URL without using the developer cons
 - Flask
 - [LXML](http://lxml.de/lxmlhtml.html)
 - Bootstrap
+
+### Parsing HTML
+I used lxml.html, which is a Python package for parsing HTML.
