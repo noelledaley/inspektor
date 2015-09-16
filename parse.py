@@ -1,9 +1,14 @@
 import requests
 import lxml.html
+import re
+
 input_url = 'http://docs.python-guide.org/en/latest/scenarios/scrape/'
 
 # Fetch HTML of input url, parse, and convert to Tree
 tree = lxml.html.parse(input_url)
+
+
+
 
 def build_element_histogram(tree):
     """
@@ -18,3 +23,7 @@ def build_element_histogram(tree):
         count[element.tag] = count.setdefault(element.tag, 0) + 1
 
     return count
+
+sample_html = '<div id="icons"> <ul> <li><a href="mailto:adriannenoelle@gmail.com"> <img src="img/gmail.png" class="icon" alt="gmail logo"></a> </li>'
+
+# sub()	Find all substrings where the RE matches, and replace them with a different string
