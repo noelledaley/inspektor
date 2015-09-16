@@ -4,6 +4,7 @@ from parse import build_element_histogram
 import os
 import requests
 import lxml.html
+import re
 
 app = Flask(__name__)
 app.secret_key = os.environ['FLASK_TOKEN']
