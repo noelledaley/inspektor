@@ -1,10 +1,9 @@
 from flask import Flask, render_template, request
 from jinja2 import StrictUndefined
-from parse import build_element_histogram, decode_html
+from parse import build_element_histogram, encode_html
 import os
 import requests
 import lxml.html
-import re
 
 app = Flask(__name__)
 app.secret_key = os.environ['FLASK_TOKEN']
