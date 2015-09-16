@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request
 from jinja2 import StrictUndefined
-from parse import build_element_histogram, encode_html
+from parse import build_element_histogram, encode_html, add_spans
 import os
 import requests
 import lxml.html
@@ -30,7 +30,8 @@ def fetch_html():
     html = page.text
 
     # Remove HTML entities from html to display on page
-    raw_html = decode_html(html)
+    raw_html = encode_html(html)
+    span_html = add_spans(raw_html)
 
     # Convert HTML unicode to Tree
     tree = lxml.html.fromstring(page.text)
@@ -38,7 +39,7 @@ def fetch_html():
     # Get histogram of element frequencies
     frequency = build_element_histogram(tree)
 
-    return render_template('results.html', frequency=frequency, raw_html=raw_html)
+    return render_template('results.html', frequency=frequency, raw_html=span_html)
 
 
 if __name__ == '__main__':
