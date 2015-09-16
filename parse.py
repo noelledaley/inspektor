@@ -2,11 +2,8 @@ import requests
 import lxml.html
 input_url = 'http://docs.python-guide.org/en/latest/scenarios/scrape/'
 
-# Fetch HTML of input url and store as unicode
-page = requests.get(input_url)
-
-# Convert HTML unicode to Tree
-tree = lxml.html.fromstring(page.text)
+# Fetch HTML of input url, parse, and convert to Tree
+tree = lxml.html.parse(input_url)
 
 def build_element_histogram(tree):
     """
