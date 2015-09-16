@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request
 from jinja2 import StrictUndefined
-from parse import build_element_histogram
+from parse import build_element_histogram, decode_html
 import os
 import requests
 import lxml.html
@@ -28,7 +28,10 @@ def fetch_html():
 
     # Fetch HTML of input url and store as unicode
     page = requests.get(input_url)
-    raw_html = page.text
+    html = page.text
+
+    # Remove HTML entities from html to display on page
+    raw_html = decode_html(html)
 
     # Convert HTML unicode to Tree
     tree = lxml.html.fromstring(page.text)
