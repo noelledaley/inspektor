@@ -2,16 +2,7 @@ body {
   font-family: sans-serif;
 }
 
-#wrapper {
-  max-width: 800px;
-  margin: 100px auto;
-}
-
-#main {
-
-}
-
 pre {
   overflow: auto;
-  height: 500px;
+  max-height: 650px;
 }
