@@ -3,10 +3,6 @@ import lxml.html
 import re
 import cgi
 
-input_url = 'http://docs.python-guide.org/en/latest/scenarios/scrape/'
-
-# Fetch HTML of input url, parse, and convert to Tree
-tree = lxml.html.parse(input_url)
 
 def encode_html(html):
     """Given string of html, removes <, >, and & and replaces with entities."""
@@ -53,3 +49,8 @@ def add_spans(decoded_html):
 sample_html = '<div id="icons"> <ul> <li><a href="mailto:adriannenoelle@gmail.com"> <img src="img/gmail.png" class="icon" alt="gmail logo"></a> </li>'
 
 t = encode_html(sample_html)
+
+input_url = 'http://docs.python-guide.org/en/latest/scenarios/scrape/'
+
+# Fetch HTML of input url, parse, and convert to Tree
+tree = lxml.html.parse(input_url)
