@@ -2,57 +2,89 @@
 {% block title %}Inspektor | Results{% endblock %}
 
 {% block content %}
-<pre>
-  <span class="my-div">&lt;div class="row"&gt;</span>
-    <span class="my-container">&lt;div class="container"&gt;</span>
-      <span class="my-div">&lt;div class="col-md-4 col-md-offset-2"&gt;</span>
-        <span class="my-form">&lt;form class="form-signin" action ="/process-login" method="POST"&gt;</span>
 
-          <span class="my-h2">&lt;h2 class="form-signin-heading"&gt;</span>Sign In<span class="">&lt;/h2&gt;</span>
+<div class="row">
+  <div class="col-md-4 col-md-offset-4">
+    <h1>Your HTML is:</h1>
+  </div>
+</div>
 
-          <span class="my-div">&lt;div class="form-group"&gt;</span>
-            <span class="my-label">&lt;label for="username" class="sr-only"&gt;</span>Username<span class="">&lt;/label&gt;</span>
-              <span class="my-input">&lt;input type="text" name="username" class="form-control input-lg" placeholder="Username" required autofocus&gt;</span>
+
+<div class="row">
+  <div class="col-md-8">
+    <pre>
+      <span class="my-div">&lt;div class="row"&gt;</span>
+        <span class="my-container">&lt;div class="container"&gt;</span>
+          <span class="my-div">&lt;div class="col-md-4 col-md-offset-2"&gt;</span>
+            <span class="my-form">&lt;form class="form-signin" action ="/process-login" method="POST"&gt;</span>
+
+              <span class="my-h2">&lt;h2 class="form-signin-heading"&gt;</span>Sign In<span class="">&lt;/h2&gt;</span>
+
+              <span class="my-div">&lt;div class="form-group"&gt;</span>
+                <span class="my-label">&lt;label for="username" class="sr-only"&gt;</span>Username<span class="">&lt;/label&gt;</span>
+                  <span class="my-input">&lt;input type="text" name="username" class="form-control input-lg" placeholder="Username" required autofocus&gt;</span>
+              <span class="my-div">&lt;/div&gt;</span>
+
+              <span class="my-div">&lt;div class="form-group"&gt;</span>
+                <span class="my-label">&lt;label for="password-field" class="sr-only"&gt;</span>Password<span class="">&lt;/label&gt;</span>
+                <span class="my-input">&lt;input type="password" name="password" class="form-control input-lg" placeholder="Password" required&gt;</span>
+              <span class="my-div">&lt;/div&gt;</span>
+
+              <span class="my-button">&lt;button class="btn btn-lg btn-primary btn-block" type="submit"&gt;</span>Sign In
+              <span class="my-button">&lt;/button&gt;</span>
+
+            <span class="my-form">&lt;/form&gt;</span>
           <span class="my-div">&lt;/div&gt;</span>
 
-          <span class="my-div">&lt;div class="form-group"&gt;</span>
-            <span class="my-label">&lt;label for="password-field" class="sr-only"&gt;</span>Password<span class="">&lt;/label&gt;</span>
-            <span class="my-input">&lt;input type="password" name="password" class="form-control input-lg" placeholder="Password" required&gt;</span>
+          <span class="my-div">&lt;div class="col-md-4"&gt;</span>
+
+            <span class="my-form">&lt;form class="form-signin" action="/add-user" method="POST"&gt;</span>
+
+              <span class="my-h2">&lt;h2 class="form-signin-heading"&gt;</span>Sign up!<span class="">&lt;/h2&gt;</span>
+
+              <span class="my-div">&lt;div class="form-group"&gt;</span>
+                <span class="my-label">&lt;label for="new-username" class="sr-only"&gt;</span>Username<span class="my-label">&lt;/label&gt;</span>
+                  <span class="my-input">&lt;input type="text" name="new-username" class="form-control input-lg" placeholder="Username" required&gt;</span>
+              <span class="my-div">&lt;/div&gt;</span>
+
+              <span class="my-div">&lt;div class="form-group"&gt;</span>
+                <span class="my-label">&lt;label for="email-field" class="sr-only"&gt;</span>Email Address<span class="my-label">&lt;/label&gt;</span>
+                <span class="my-input">&lt;input type="email" name="new-email" class="form-control input-lg" placeholder="Email Address" required&gt;</span>
+              <span class="my-div">&lt;/div&gt;</span>
+
+              <span class="my-div">&lt;div class="form-group"&gt;</span>
+                <span class="my-label">&lt;label for="password-field" class="sr-only"&gt;</span>Password<span class="my-label">&lt;/label&gt;</span>
+                <span class="my-input">&lt;input type="password" name="new-password" class="form-control input-lg" placeholder="Password" required&gt;</span>
+              <span class="my-div">&lt;/div&gt;</span>
+
+              <span class="my-button">&lt;button class="btn btn-lg btn-primary btn-block" type="submit"&gt;</span>Sign Up
+              <span class="my-button">&lt;/button&gt;</span>
+
+            <span class="my-form">&lt;/form&gt;</span>
           <span class="my-div">&lt;/div&gt;</span>
-
-          <span class="my-button">&lt;button class="btn btn-lg btn-primary btn-block" type="submit"&gt;</span>Sign In
-          <span class="my-button">&lt;/button&gt;</span>
-
-        <span class="my-form">&lt;/form&gt;</span>
+        <span class="my-div">&lt;/div&gt;</span>
       <span class="my-div">&lt;/div&gt;</span>
+    </pre>
+  </div>
 
-      <span class="my-div">&lt;div class="col-md-4"&gt;</span>
+  <div class="col-md-4">
+    <div class="table-responsive">
+      <table class="table table-striped table-hover">
+        <thead>
+          <tr>
+            <th>Element</th>
+            <th>Frequency</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="my-element">
+            <td>Element</td>
+            <td>Frequency</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
 
-        <span class="my-form">&lt;form class="form-signin" action="/add-user" method="POST"&gt;</span>
-
-          <span class="my-h2">&lt;h2 class="form-signin-heading"&gt;</span>Sign up!<span class="">&lt;/h2&gt;</span>
-
-          <span class="my-div">&lt;div class="form-group"&gt;</span>
-            <span class="my-label">&lt;label for="new-username" class="sr-only"&gt;</span>Username<span class="my-label">&lt;/label&gt;</span>
-              <span class="my-input">&lt;input type="text" name="new-username" class="form-control input-lg" placeholder="Username" required&gt;</span>
-          <span class="my-div">&lt;/div&gt;</span>
-
-          <span class="my-div">&lt;div class="form-group"&gt;</span>
-            <span class="my-label">&lt;label for="email-field" class="sr-only"&gt;</span>Email Address<span class="my-label">&lt;/label&gt;</span>
-            <span class="my-input">&lt;input type="email" name="new-email" class="form-control input-lg" placeholder="Email Address" required&gt;</span>
-          <span class="my-div">&lt;/div&gt;</span>
-
-          <span class="my-div">&lt;div class="form-group"&gt;</span>
-            <span class="my-label">&lt;label for="password-field" class="sr-only"&gt;</span>Password<span class="my-label">&lt;/label&gt;</span>
-            <span class="my-input">&lt;input type="password" name="new-password" class="form-control input-lg" placeholder="Password" required&gt;</span>
-          <span class="my-div">&lt;/div&gt;</span>
-
-          <span class="my-button">&lt;button class="btn btn-lg btn-primary btn-block" type="submit"&gt;</span>Sign Up
-          <span class="my-button">&lt;/button&gt;</span>
-
-        <span class="my-form">&lt;/form&gt;</span>
-      <span class="my-div">&lt;/div&gt;</span>
-    <span class="my-div">&lt;/div&gt;</span>
-  <span class="my-div">&lt;/div&gt;</span>
-</pre>
+</div>
 {% endblock %}
