@@ -28,9 +28,6 @@ def build_element_histogram(tree):
 
     return count
 
-sample_html = '<div id="icons"> <ul> <li><a href="mailto:adriannenoelle@gmail.com"> <img src="img/gmail.png" class="icon" alt="gmail logo"></a> </li>'
-
-t = encode_html(sample_html)
 
 def add_spans(decoded_html):
 
@@ -49,3 +46,10 @@ def add_spans(decoded_html):
     return html
 
 # sub()	Find all substrings where the RE matches, and replace them with a different string
+
+
+##### Dummy html #####
+
+sample_html = '<div id="icons"> <ul> <li><a href="mailto:adriannenoelle@gmail.com"> <img src="img/gmail.png" class="icon" alt="gmail logo"></a> </li>'
+
+t = encode_html(sample_html)
