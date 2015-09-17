@@ -36,7 +36,7 @@ def add_spans(decoded_html):
     # This is the regex pattern to find the element type: &lt;([A-Z|a-z]+[0-9]*)
     html = re.sub('&lt;([A-Z|a-z]+[0-9]*)', span_class_adder, decoded_html)
 
-    html = html.replace("&gt;", "&gt;</span>")
+    html = html.replace("&gt;", "&gt;</span><br>")
 
     return html
 
