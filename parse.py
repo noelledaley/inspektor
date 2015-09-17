@@ -30,15 +30,14 @@ def add_spans(decoded_html):
     # Split decoded_html on closing bracket
     elements = decoded_html.split('&gt;')
 
-    spans = []
+    def span_class_adder(matchobj):
+        return "<span class=\"my-{elem}\">&lt;{elem}".format(elem=matchobj.group(1))
 
-    for element in elements:
-        # Wrap element in span and code tags
-        span = '<span class="%s"><code>%s&gt;</code></span>' % (element, element)
-        spans.append(span)
+    # This is the regex pattern to find the element type: &lt;([A-Z|a-z]+[0-9]*)
+    html = re.sub('&lt;([A-Z|a-z]+[0-9]*)', span_class_adder, decoded_html)
 
-    html = "".join(spans)
-    # returns HTML as string
+    html = html.replace("&gt;", "&gt;</span>")
+
     return html
 
 # sub()	Find all substrings where the RE matches, and replace them with a different string
