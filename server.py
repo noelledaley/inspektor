@@ -37,7 +37,7 @@ def fetch_html():
         # Need to figure out how to strip so only element name is added.
         # e.g. <span class='div id="icons"'><code>&lt;div id="icons"&gt;</code></span>
         # >>> <span class="div"><code>&lt;div id="icons"&gt;</code></span>
-    span_html = add_spans(raw_html)
+    span_html = Markup(add_spans(raw_html))
 
     # Convert HTML unicode to Tree
     tree = lxml.html.fromstring(page.text)
@@ -45,7 +45,7 @@ def fetch_html():
     # Get histogram of element frequencies
     frequency = build_element_histogram(tree)
 
-    return render_template('results.html', frequency=frequency, raw_html=html)
+    return render_template('results.html', frequency=frequency, raw_html=span_html)
 
 
 @app.route('/prototype')
