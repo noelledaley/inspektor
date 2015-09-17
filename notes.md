@@ -9,8 +9,9 @@
 
 
 9/16
-
+- Researched regex and Beautiful soup
+- Encoded html to display on page without rendering
 
 
 9/17
-- 
+- Built frontend prototype
