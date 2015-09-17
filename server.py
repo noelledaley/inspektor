@@ -48,6 +48,13 @@ def fetch_html():
     return render_template('results.html', frequency=frequency, raw_html=html)
 
 
+@app.route('/prototype')
+def show_prototype():
+    """Display prototype."""
+
+    return render_template('prototype.html')
+
+
 if __name__ == '__main__':
     app.debug = True
     app.run()
