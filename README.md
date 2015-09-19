@@ -4,7 +4,7 @@ Inspektor helps users analyze the HTML of a URL without using the developer cons
 http://inspektor.herokuapp.com/
 
 ![Homepage](/static/home.png)
-![Results](/statis/results.png)
+![Results](/static/results.png)
 
 ### Technologies
 - Python
