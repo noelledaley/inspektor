@@ -19,7 +19,7 @@ a, h1 {
 
 #error {
   font-style: italic;
-  color: #710000;
+  color: #C13131;
 }
 
 /* RESULTS.html */
@@ -28,6 +28,10 @@ a, h1 {
   font-family: monospace;
   overflow: scroll;
   height: 700px;
+}
+
+.spaced {
+  margin-bottom: 25px;
 }
 
 .highlight {
