@@ -28,11 +28,17 @@
               <i class="glyphicon glyphicon-search"></i>
           </button>
         </span>
-
       </div>
 
     </form>
 
+  </div>
+</div>
+<div class="row">
+  <div class="col-lg-8 col-lg-offset-2">
+    {% for message in get_flashed_messages() %}
+      <span id="error">{{message}}</span>
+    {% endfor %}
   </div>
 </div>
 {% endblock %}
