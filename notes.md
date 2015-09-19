@@ -25,3 +25,4 @@
 9/19
 - cleaning up code/comments
 - adding css
+- deploy!
