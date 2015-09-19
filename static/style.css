@@ -2,7 +2,7 @@ body {
   font-family: sans-serif;
 }
 
-a, h1 {
+a, a:hover, h1 {
   color: #DB5858;
 }
 
@@ -26,6 +26,7 @@ a, h1 {
 
 #html-box {
   font-family: monospace;
+  background-color: #f9f9f9;
   overflow: scroll;
   height: 700px;
 }
