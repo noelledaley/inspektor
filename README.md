@@ -1,5 +1,7 @@
 # Inspektor
-Inspektor helps users analyze the HTML of a URL without using the developer console. Simply enter a URL to be parsed and the underlying HTML will be displayed along with a table containing the frequency of each element.
+Inspektor helps users analyze the HTML of a URL without using the developer console. Simply enter a URL to be parsed and the underlying HTML will be displayed along with a table containing the frequency of each element. Click on the elements in the table to highlight the corresponding elements within the html.
+
+http://inspektor.herokuapp.com/
 
 ### Technologies
 - Python
