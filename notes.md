@@ -19,3 +19,9 @@
 9/17
 - Built frontend prototype
 - Added jQuery for code highlighting
+- Tested regex patterns
+- Successfully wrapped spans around elements using regex
+
+9/19
+- cleaning up code/comments
+- adding css
