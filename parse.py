@@ -31,6 +31,8 @@ def add_spans(encoded_html):
 
     e.g. <span class="my-div">&lt;div id='sample'&gt;</span><br>
     """
+    # TODO: this only wraps opening element tags in spans.
+    # Will need to write separate regex search to handle closing tags.
 
     def add_span_class(matchobj):
         return "<span class=\"my-{elem}\">&lt;{elem}".format(elem=matchobj.group(1))
