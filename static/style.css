@@ -2,14 +2,24 @@ body {
   font-family: sans-serif;
 }
 
+a, h1 {
+  color: #DB5858;
+}
+
 .title {
-  color: red;
+  color: #9B1717;
+  font-weight: bold;
 }
 
 /* INDEX.html */
 
 #regina {
   width: 100%;
+}
+
+#error {
+  font-style: italic;
+  color: #710000;
 }
 
 /* RESULTS.html */
@@ -21,5 +31,6 @@ body {
 }
 
 .highlight {
-  color: yellow;
+  color: white;
+  background-color: #9B1717;
 }
