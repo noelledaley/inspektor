@@ -19,3 +19,5 @@ The most challenging aspect of this project was determining how to programmatica
 
 #### Future Improvements
 - Currently, I'm using 2 different tools to create the histogram and format the html for viewing. If I had more time to expand this project, I'd look more into BeautifulSoup to see if I could use it as my all-in-one solution.
+- Need to validate that user enters a real URL. Currently able to check if user submits a blank input form, but not whether the URL actually exists (i.e. `rjesjfdslk.com`). Next steps to handle this error would be to use `try...except`.
+- Add ability to sort histogram table
