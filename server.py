@@ -29,7 +29,7 @@ def fetch_html():
         # Fetch HTML of input url and store as unicode
         page = requests.get(input_url)
 
-    except requests.exceptions.ConnectionError:
+    except (requests.exceptions.ConnectionError, requests.exceptions.InvalidURL):
         flash('The URL you entered is either invalid or unavailable. Try again!')
         return redirect('/')
 
