@@ -12,7 +12,7 @@ def encode_html(html):
 
 def build_element_histogram(tree):
     """
-    Given an HTML Tree, count number of elements and store as histogram.
+    Given an lxml.html Tree, count number of elements and store as histogram.
 
     Returns dictionary where keys are elements and values are frequency.
     """
@@ -36,8 +36,6 @@ def add_spans(encoded_html):
     html = html.replace("&gt;", "&gt;</span><br>")
 
     return html
-
-# sub()	Find all substrings where the RE matches, and replace them with a different string
 
 
 ##### Dummy html #####
