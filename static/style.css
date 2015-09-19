@@ -10,3 +10,9 @@ pre {
 .highlight {
   color: yellow;
 }
+
+#html-box {
+  font-family: monospace;
+  overflow: scroll;
+  height: 700px;
+}
