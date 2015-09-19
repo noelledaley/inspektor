@@ -9,6 +9,7 @@ http://inspektor.herokuapp.com/
 ### Technologies
 - Python
 - Flask
+- JavaScript / jQuery
 - [LXML](http://lxml.de/lxmlhtml.html)
 - [Regular Expressions](https://docs.python.org/2/library/re.html)
 - [CGI](https://wiki.python.org/moin/EscapingHtml)
@@ -25,4 +26,4 @@ The most challenging aspect of this project was determining how to programmatica
 #### Future Improvements
 - Currently, I'm using 2 different tools to create the histogram and format the html for viewing. If I had more time to expand this project, I'd look more into BeautifulSoup to see if I could use it as my all-in-one solution.
 - Only opening element tags are able to be highlighted. Will need to write separate regex search & substitution to handle closing tags.
-- Add ability to sort histogram table
+- Add ability to sort histogram table. This can be done using JavaScript.
