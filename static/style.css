@@ -16,3 +16,11 @@ pre {
   overflow: scroll;
   height: 700px;
 }
+
+#regina {
+  width: 600px;
+}
+
+#title {
+  color: red;
+}
