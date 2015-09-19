@@ -25,31 +25,32 @@ def fetch_html():
 
     input_url = request.form.get('input_url')
 
-    # If user didn't enter a URL, redirect and display error message
-    if len(input_url) <= 7:
-        flash('That\'s not a valid URL! Please try again.')
+    try:
+        # Fetch HTML of input url and store as unicode
+        page = requests.get(input_url)
+
+    except requests.exceptions.ConnectionError:
+        flash('The URL you entered is either invalid or unavailable. Try again!')
         return redirect('/')
 
-    # Keep track of URL, omitting http:// prefix
-    raw_site = input_url[7:]
+    else:
+        html = page.text
 
-    # Fetch HTML of input url and store as unicode
-    page = requests.get(input_url)
-    html = page.text
+        # Replace <, > with HTML entities to display on page
+        raw_html = encode_html(html)
 
-    # Replace <, > with HTML entities to display on page
-    raw_html = encode_html(html)
+        # Add spans to each element so jQuery can select and apply highlight class
+        # Have to pass raw_html as Markup object to properly display
+        span_html = Markup(add_spans(raw_html))
 
-    # Add spans to each element so jQuery can select and apply highlight class
-    span_html = Markup(add_spans(raw_html))
+        # Convert HTML unicode to lxml Tree, build element histogram
+        tree = lxml.html.fromstring(page.text)
+        frequency = build_element_histogram(tree)
 
-    # Convert HTML unicode to Tree
-    tree = lxml.html.fromstring(page.text)
+        # Keep track of URL, omitting http:// prefix
+        display_url = input_url[7:]
 
-    # Get histogram of element frequencies
-    frequency = build_element_histogram(tree)
-
-    return render_template('results.html', frequency=frequency, raw_html=span_html, website=raw_site)
+        return render_template('results.html', frequency=frequency, raw_html=span_html, website=display_url)
 
 
 @app.route('/prototype')
