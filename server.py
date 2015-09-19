@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, Markup, redirect
+from flask import Flask, render_template, request, Markup, redirect, flash
 from jinja2 import StrictUndefined
 from parse import build_element_histogram, encode_html, add_spans
 import os
@@ -27,6 +27,7 @@ def fetch_html():
 
     # If user didn't enter a URL, redirect and display error message
     if len(input_url) <= 7:
+        flash('That\'s not a valid URL! Please try again.')
         return redirect('/')
 
     # Keep track of URL, omitting http:// prefix
