@@ -3,6 +3,7 @@ import lxml.html
 import re
 import cgi
 
+### Helper functions for Inspektor ###
 
 def encode_html(html):
     """Given string of html, removes <, >, and & and replaces with entities."""
@@ -10,7 +11,7 @@ def encode_html(html):
     return cgi.escape(html)
 
 
-def build_element_histogram(tree):
+def build_element_histogram(lxml_tree):
     """
     Given an lxml.html Tree, count number of elements and store as histogram.
 
@@ -19,13 +20,17 @@ def build_element_histogram(tree):
     count = {}
 
     # Iterate through all elements in Tree, depth-first
-    for element in tree.iter():
+    for element in lxml_tree.iter():
         count[element.tag] = count.setdefault(element.tag, 0) + 1
 
     return count
 
 
 def add_spans(encoded_html):
+    """Given string of encoded html, wrap each element with a span and class of element tag.
+
+    e.g. <span class="my-div">&lt;div id='sample'&gt;</span><br>
+    """
 
     def add_span_class(matchobj):
         return "<span class=\"my-{elem}\">&lt;{elem}".format(elem=matchobj.group(1))
