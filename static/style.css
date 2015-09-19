@@ -6,6 +6,10 @@ a, a:hover, h1 {
   color: #DB5858;
 }
 
+h1 {
+  font-family: 'PT Mono', monospace;
+}
+
 .title {
   color: #9B1717;
   font-weight: bold;
