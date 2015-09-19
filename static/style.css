@@ -15,6 +15,16 @@ h1 {
   font-weight: bold;
 }
 
+.footer {
+  position: fixed;
+  bottom: 0;
+  margin-top: 40px;
+  padding-top: 10px;
+  text-align: center;
+  width: 100%;
+  background-color: #fff;
+}
+
 /* INDEX.html */
 
 #regina {
