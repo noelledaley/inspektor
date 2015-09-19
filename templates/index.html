@@ -16,13 +16,24 @@
 
 <div class="row">
   <div class="col-lg-8 col-lg-offset-2">
+
     <form action="/results" method="POST">
-      <div class="form-group">
-        <label for="url-input">Enter a URL:</label>
-        <input class="form-control" id="url-input" type="text" name="input_url" value="http://">
-        <input class="btn" type="submit">
+
+      <div class="input-group col-md-12">
+
+        <!-- <label for="url-input">Enter a URL:</label> -->
+        <input class="form-control input-lg" id="url-input" type="text" name="input_url" value="http://">
+
+        <span class="input-group-btn">
+          <button class="btn btn-info btn-lg" type="submit">
+              <i class="glyphicon glyphicon-search"></i>
+          </button>
+        </span>
+
       </div>
+
     </form>
+
   </div>
 </div>
 {% endblock %}
