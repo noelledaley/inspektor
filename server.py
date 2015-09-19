@@ -29,14 +29,10 @@ def fetch_html():
     page = requests.get(input_url)
     html = page.text
 
-    # Remove HTML entities from html to display on page
+    # Replace <, > with HTML entities to display on page
     raw_html = encode_html(html)
 
     # Add spans to each element so jQuery can select and apply highlight class
-    # TODO: the span classes currently added have extra information on them.
-        # Need to figure out how to strip so only element name is added.
-        # e.g. <span class='div id="icons"'><code>&lt;div id="icons"&gt;</code></span>
-        # >>> <span class="div"><code>&lt;div id="icons"&gt;</code></span>
     span_html = Markup(add_spans(raw_html))
 
     # Convert HTML unicode to Tree
