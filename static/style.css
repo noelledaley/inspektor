@@ -2,14 +2,17 @@ body {
   font-family: sans-serif;
 }
 
-pre {
-  overflow: auto;
-  max-height: 650px;
+.title {
+  color: red;
 }
 
-.highlight {
-  color: yellow;
+/* INDEX.html */
+
+#regina {
+  width: 100%;
 }
+
+/* RESULTS.html */
 
 #html-box {
   font-family: monospace;
@@ -17,14 +20,6 @@ pre {
   height: 700px;
 }
 
-.title {
-  color: red;
-}
-
-#regina {
-  width: 100%;
-}
-
-#url-input {
-  /*width: 80%;*/
+.highlight {
+  color: yellow;
 }
