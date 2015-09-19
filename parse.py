@@ -25,13 +25,13 @@ def build_element_histogram(tree):
     return count
 
 
-def add_spans(decoded_html):
+def add_spans(encoded_html):
 
     def add_span_class(matchobj):
         return "<span class=\"my-{elem}\">&lt;{elem}".format(elem=matchobj.group(1))
 
     # This is the regex pattern to find the element type: &lt;([A-Z|a-z]+[0-9]*)
-    html = re.sub('&lt;([A-Z|a-z]+[0-9]*)', add_span_class, decoded_html)
+    html = re.sub('&lt;([A-Z|a-z]+[0-9]*)', add_span_class, encoded_html)
 
     html = html.replace("&gt;", "&gt;</span><br>")
 
