@@ -15,10 +15,13 @@
 </div>
 
 <div class="row">
-  <div class="col-lg-12">
+  <div class="col-lg-8 col-lg-offset-2">
     <form action="/results" method="POST">
-      <input class="form-control" type="text" name="input_url" value="http://">
-      <input class="btn" type="submit">
+      <div class="form-group">
+        <label for="url-input">Enter a URL:</label>
+        <input class="form-control" id="url-input" type="text" name="input_url" value="http://">
+        <input class="btn" type="submit">
+      </div>
     </form>
   </div>
 </div>

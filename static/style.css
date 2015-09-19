@@ -17,10 +17,14 @@ pre {
   height: 700px;
 }
 
+#title {
+  color: red;
+}
+
 #regina {
   width: 100%;
 }
 
-#title {
-  color: red;
+#url-input {
+  width: 80%;
 }
