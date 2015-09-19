@@ -24,6 +24,8 @@ def fetch_html():
     """Given URL, fetch html, parse it, and store elements and frequencies as a Python dictionary."""
 
     input_url = request.form.get('input_url')
+    # Keep track of URL, omitting http:// prefix
+    raw_site = input_url[7:]
 
     # Fetch HTML of input url and store as unicode
     page = requests.get(input_url)
@@ -41,7 +43,7 @@ def fetch_html():
     # Get histogram of element frequencies
     frequency = build_element_histogram(tree)
 
-    return render_template('results.html', frequency=frequency, raw_html=span_html)
+    return render_template('results.html', frequency=frequency, raw_html=span_html, website=raw_site)
 
 
 @app.route('/prototype')
