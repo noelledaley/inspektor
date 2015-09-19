@@ -61,5 +61,7 @@ def show_prototype():
 
 
 if __name__ == '__main__':
-    app.debug = True
-    app.run()
+    PORT = int(os.environ.get("PORT", 5000))
+    DEBUG = "NO_DEBUG" not in os.environ
+
+    app.run(debug=DEBUG, host="0.0.0.0", port=PORT)
